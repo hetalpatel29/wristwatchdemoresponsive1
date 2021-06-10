@@ -1,0 +1,253 @@
+section {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    height: 100vh;
+}
+
+section .watchframe img {
+    height: 110px;
+    width: 110px;
+}
+
+section .watchframe img:hover {
+    animation: watch;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+}
+
+@keyframes watch {
+    0% {
+        transform: rotate(360deg);
+    }
+    50% {
+        transform: rotate(340deg);
+    }
+    100% {
+        transform: rotate(320deg);
+    }
+}
+
+.watchframe {
+    height: 110px;
+    width: 110px;
+    background-color: white;
+    border: 2px solid rgb(93, 243, 6);
+    margin: 10px 0px;
+    border-radius: 10%;
+}
+
+section #selectedproduct {
+    width: 250px;
+    height: 250px;
+    z-index: 2;
+    position: relative;
+}
+
+section .productframe {
+    width: 500px;
+    height: 500px;
+    border: 5px solid rgb(198, 233, 164);
+    background-color: rgba(175, 238, 238, 0.322);
+    text-align: center;
+    border-radius: 10%;
+}
+
+section .watchmodel {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    left: 360px;
+    top: 110px;
+}
+
+section h1 {
+    color: whitesmoke;
+    font-size: 40px;
+    margin-bottom: 5px;
+    margin-top: 80px;
+}
+
+section h2 {
+    color: whitesmoke;
+    font-size: 30px;
+    margin-right: 10px;
+    font-size: 25px;
+}
+
+section .modelsize {
+    position: relative;
+    left: 150px;
+    display: flex;
+    flex-direction: row;
+    z-index: 1;
+}
+
+.sizebutton {
+    height: 30px;
+    width: 30px;
+    border-radius: 10%;
+    margin: 16px 5px;
+    font-size: 18px;
+    font-weight: bold;
+    border: 2px solid rgb(100, 4, 4);
+    color: darkslategray;
+    background-color: mistyrose;
+    z-index: 2;
+}
+
+section #selectedproduct:hover {
+    z-index: 5;
+    animation: selectedwatch;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+}
+
+@keyframes selectedwatch {
+    0% {
+        transform: rotate(320deg);
+    }
+    50% {
+        transform: scale3d(1.5, 1.5, 1.5);
+    }
+    100% {
+        transform: scale3d(1.5, 1.5, 1.5);
+        transform: rotate(319deg);
+    }
+}
+
+
+/* 
+@keyframes watchrotation {
+    0% {}
+    50% {}
+    100% {
+        transform: rotate(320deg);
+    }
+} */
+
+section #selectproduct::before {
+    content: '';
+    position: absolute;
+    transform: rotateX(0deg);
+}
+
+section #selectproduct:hover:before {
+    position: absolute;
+    transform: rotateX(360deg);
+}
+
+section .modelsize button:hover {
+    position: relative;
+    top: -20px;
+}
+
+section .addtocartbutton {
+    width: 200px;
+    height: 50px;
+    font-size: 20px;
+    position: relative;
+    bottom: -20px;
+    border: 2px solid rgb(18, 21, 184);
+    border-radius: 100px;
+    color: black;
+    font-weight: bold;
+    background-color: rgba(57, 202, 238, 0.986);
+}
+
+.addtocartbutton:hover {
+    transform: scale(1.3, 1.3);
+}
+
+@media screen and (max-width:426px) {
+    section {
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: black;
+        height: 100vh;
+        width: 100%;
+        border-radius: 10%;
+    }
+    section .productframe {
+        width: 100%;
+        height: 100vh;
+        border: 5px solid rgb(198, 233, 164);
+        background-color: rgba(175, 238, 238, 0.322);
+        text-align: center;
+        border-radius: 10%;
+    }
+    section .watchframe img {
+        height: 80px;
+        width: 80px;
+    }
+    section #selectedproduct {
+        width: 250px;
+        height: 250px;
+        z-index: 2;
+        position: relative;
+    }
+    .watchframe {
+        height: 80px;
+        width: 80px;
+        background-color: white;
+        border: 2px solid rgb(93, 243, 6);
+        margin: 0px 10px;
+        border-radius: 10%;
+    }
+    section .watchmodel {
+        display: flex;
+        flex-direction: row;
+        position: absolute;
+        left: 5px;
+        top: 70%;
+    }
+    section h1 {
+        color: whitesmoke;
+        font-size: 40px;
+        margin-bottom: 0px;
+        margin-top: 10px;
+    }
+    section h2 {
+        color: whitesmoke;
+        font-size: 30px;
+        margin-right: 20px;
+        font-size: 20px;
+    }
+    section .modelsize {
+        position: relative;
+        left: 40px;
+        display: flex;
+        flex-direction: row;
+        z-index: 1;
+    }
+    .sizebutton {
+        height: 30px;
+        width: 30px;
+        border-radius: 10%;
+        margin: 16px 5px;
+        font-size: 18px;
+        font-weight: bold;
+        border: 2px solid rgb(100, 4, 4);
+        color: darkslategray;
+        background-color: mistyrose;
+        z-index: 2;
+    }
+    section .addtocartbutton {
+        width: 200px;
+        height: 50px;
+        font-size: 20px;
+        position: relative;
+        bottom: -120px;
+        border: 2px solid rgb(18, 21, 184);
+        border-radius: 100px;
+        color: black;
+        font-weight: bold;
+        background-color: rgba(57, 202, 238, 0.986);
+    }
+}
